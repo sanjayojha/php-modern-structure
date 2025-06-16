@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error {{ statusCode }}</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .error-container {
+            background-color: #ffe0e0;
+            border: 1px solid #ff0000;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 5px;
+            max-width: 800px;
+            text-align: left;
+        }
+        .error-container h2 {
+            color: #ff0000;
+        }
+        .error-details {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-top: 15px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Application Error</h1>
+    </header>
+    <main>
+        <div class="error-container">
+            <h2>Error {{ statusCode }} - {{ publicMessage }}</h2>
+            {% if debugMode %}
+                <p><strong>Detailed Message:</strong> {{ errorMessage }}</p>
+                {% if errorTrace %}
+                    <div class="error-details">
+                        <h3>Stack Trace:</h3>
+                        <pre>{{ errorTrace }}</pre>
+                    </div>
+                {% endif %}
+            {% else %}
+                <p>We apologize for the inconvenience. Please try again later or contact support if the issue persists.</p>
+            {% endif %}
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Modern PHP App</p>
+    </footer>
+</body>
+</html>

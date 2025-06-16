@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ pageTitle }}</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>{{ pageTitle }}</h1>
+        <nav>
+            <a href="/">Home</a> |
+            <a href="/about">About</a> |
+            <a href="/hello/world">Hello World</a>
+        </nav>
+    </header>
+    <main>
+        {% if user %}
+            <h2>{{ user.name }}</h2>
+            <p><strong>ID:</strong> {{ user.id }}</p>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+            <p><strong>Joined:</strong> {{ user.createdAt }}</p>
+        {% else %}
+            <p>User not found.</p>
+        {% endif %}
+        <p><a href="/">Back to Home</a></p>
+    </main>
+    <footer>
+        <p>&copy; 2025 Modern PHP App</p>
+    </footer>
+</body>
+</html>
