@@ -52,7 +52,7 @@ cp .env.example .env
 
 -   Edit the `.env` file and fill in your database credentials and other necessary settings:
 
-```toml
+```ini
 APP_ENV=development
 DB_HOST=127.0.0.1
 DB_PORT=3306
@@ -83,8 +83,9 @@ INSERT INTO users (name, email) VALUES ('Bob Johnson', 'bob@example.com');
 
 ```bash
 chmod -R 777 var
-*(Note: For production, more restrictive permissions are recommended.)*
 ```
+
+_(Note: For production, more restrictive permissions are recommended.)_
 
 ### Running the Application
 
